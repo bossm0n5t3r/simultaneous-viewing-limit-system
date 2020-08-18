@@ -63,6 +63,4 @@ public class KafkaProducerConfig {
 
     @Bean
     public KafkaTemplate<String,UserDto.Response> dtoKafkaTemplate(){ return new KafkaTemplate<>(dtoProducerFactory());}
-
-
 }
