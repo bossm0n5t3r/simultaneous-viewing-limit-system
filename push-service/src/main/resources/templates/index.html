@@ -50,8 +50,6 @@
         setTimeout(function(){
             window.location = "/notifications";
         },1500);
-
-        return;
     }
 
     /*
@@ -72,8 +70,6 @@
                 notify(response);
             });
         });
-
-        return;
     } // function connect
 
     function notify(response) {
@@ -81,9 +77,9 @@
         if(result){
             forceConnect(response);
             //and redirect to VOD watching page
+            // TODO 결과와 상관없이 /notifications 로 이동하는 것인가?
             window.location = "/notifications";
         }
-        return;
     }
 
     /*

@@ -17,6 +17,7 @@ public class MessageSender {
     private final KafkaTemplate<String, WatchInfoDto.Request> watchInfoKafkaTemplate;
 
     public void sendMessage(String topic, WatchInfoDto.Request dto){
+        // TODO send function result로 성공 여부는 필요없는 것인가?
         watchInfoKafkaTemplate.send(topic,dto);
         logger.info(topic + " produced.");
     }

@@ -7,7 +7,6 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -28,7 +27,8 @@ public class JacksonConfiguration {
         return objectMapper;
     }
 
-    public class LocalDateSerializer extends JsonSerializer<LocalDate> {
+    // TODO static으로 두어도 괜찮은가?
+    public static class LocalDateSerializer extends JsonSerializer<LocalDate> {
 
         @Override
         public void serialize(LocalDate value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
@@ -37,7 +37,8 @@ public class JacksonConfiguration {
 
     }
 
-    public class LocalDateDeserializer extends JsonDeserializer<LocalDate> {
+    // TODO static으로 두어도 괜찮은가?
+    public static class LocalDateDeserializer extends JsonDeserializer<LocalDate> {
 
         @Override
         public LocalDate deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
